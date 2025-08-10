@@ -1,420 +1,499 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    body {background-color: #0e0e0e}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #9a9a9a; -webkit-text-stroke: #9a9a9a}
-    p.p8 {margin: 0.0px 0.0px 20.0px 0.0px; text-align: right; font: 14.0px 'Helvetica Neue'; color: #adadad; -webkit-text-stroke: #adadad}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px 'Hiragino Sans'; color: #eaeaea; -webkit-text-stroke: #eaeaea}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea; min-height: 20.0px}
-    li.li4 {margin: 0.0px 0.0px 10.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #7696ff; -webkit-text-stroke: #7696ff}
-    li.li5 {margin: 0.0px 0.0px 10.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #7696ff}
-    li.li6 {margin: 0.0px 0.0px 10.0px 0.0px; font: 18.0px 'Hiragino Sans'; color: #7696ff; -webkit-text-stroke: #7696ff}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'Hiragino Sans'; font-kerning: none}
-    span.s3 {-webkit-text-stroke: 0px #000000}
-    span.s4 {font: 18.0px 'Hiragino Sans'; font-kerning: none; -webkit-text-stroke: 0px #7696ff}
-    span.s5 {font: 18.0px 'Hiragino Sans'; font-kerning: none}
-    span.s6 {font: 18.0px 'Helvetica Neue'; -webkit-text-stroke: 0px #000000}
-    span.s7 {font: 14.0px 'Hiragino Sans'; font-kerning: none}
-    span.s8 {font: 17.0px 'Helvetica Neue'; font-kerning: none}
-    span.s9 {font: 17.0px 'Hiragino Sans'; font-kerning: none}
-    span.s10 {font: 22.0px '.AppleJapaneseFont'; font-kerning: none}
-    span.s11 {font: 22.0px 'Helvetica Neue'; font-kerning: none}
-    ol.ol1 {list-style-type: decimal}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma-T's Lyrics</title>
+    <style>
+        /* デザインはここで調整します */
+        body {
+            background-color: #111; /* 背景色（ダークモード） */
+            color: #eee;            /* 文字色 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #444;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0 0;
+            color: #aaa;
+        }
+
+        /* 曲目リスト（目次） */
+        .setlist {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+        }
+        .setlist h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+        .setlist ol {
+            padding-left: 25px;
+        }
+        .setlist li {
+            margin-bottom: 10px;
+        }
+        .setlist a {
+            color: #8af; /* リンクの色 */
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* 各曲のブロック */
+        .song-block {
+            margin-bottom: 50px; /* 曲間のスペース */
+        }
+        .song-title {
+            font-size: 22px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+        }
+        .credits {
+            font-size: 14px;
+            color: #bbb;
+            text-align: right; /* 右寄せ */
+            margin-top: -10px; /* タイトルとの間を詰める */
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .lyrics {
+            font-size: 17px;
+            line-height: 1.9;    /* 行間 */
+            white-space: pre-wrap; /* 改行やスペースをそのまま表示 */
+        }
+    </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>Sigma-T</b></span></h1>
-<p class="p2"><span class="s1">2025.08.10 NIGHT THEATER at</span><span class="s2">恵比寿</span><span class="s1">BATICA</span></p>
-<h2 style="margin: 0.0px 0.0px 16.6px 0.0px; font: 20.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>SET LIST</b></span></h2>
-<ol class="ol1">
-  <li class="li4"><span class="s3"></span><span class="s1">Stimulation</span></li>
-  <li class="li4"><span class="s3"></span><span class="s1">Packed My Bags</span></li>
-  <li class="li5"><span class="s4">融解</span></li>
-  <li class="li4"><span class="s3"></span><span class="s1">Good Garden</span></li>
-  <li class="li4"><span class="s3"></span><span class="s5">全ての悩める人たちへ（</span><span class="s1">Hizuo Remix</span><span class="s5">）</span></li>
-  <li class="li4"><span class="s3"></span><span class="s1">ODORIBA</span></li>
-  <li class="li6"><span class="s6"></span><span class="s1">モノタリナイ</span></li>
-  <li class="li4"><span class="s3"></span><span class="s1">LOADING</span></li>
-  <li class="li4"><span class="s3"></span><span class="s1">Secret Princess</span></li>
-  <li class="li5"><span class="s4">晩餐会</span></li>
-</ol>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>1. Stimulation</b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Nerubeats</span></p>
-<p class="p9"><span class="s1">昨日とは違う毎日が</span><span class="s8">  </span></p>
-<p class="p10"><span class="s9">始まった</span><span class="s1">Happy Life </span><span class="s9">みたいだ</span><span class="s1">  </span></p>
-<p class="p9"><span class="s1">それでまだ足りないみたいだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">感情は最新式なんだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">また誰かがこっちをみている</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">君が僕のことを見ている</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">僕は一人旅を続ける</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">今まで見たことない世界へ</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s1">Wake up </span><span class="s9">昼の</span><span class="s1">12:00</span><span class="s9">を過ぎてる</span><span class="s1">  </span></p>
-<p class="p9"><span class="s1">いつもと同じとりあえずシャワーに</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">新しいことなんて何もない</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">つまらない</span><span class="s8">my life </span><span class="s1">あぁまた始まる</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">そりゃそうでしょう？</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">昨日も今日も変わらない</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">冒険の書開いてみようか</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">やっと立てたはずのスタートライン</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">も今じゃ悪天候</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">言い訳ばっか続けても</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">結局何も変わらないでしょう？</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">じゃあ今から声合わせて</span><span class="s8">  </span></p>
-<p class="p10"><span class="s1">1234</span><span class="s9">で</span><span class="s1">step up  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">昨日とは違う毎日が</span><span class="s8">  </span></p>
-<p class="p10"><span class="s9">始まった</span><span class="s1">Happy Life </span><span class="s9">みたいだ</span><span class="s1">  </span></p>
-<p class="p9"><span class="s1">それでまだ足りないみたいだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">感情は最新式なんだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">また誰かがこっちをみている</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">君が僕のことを見ている</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">僕は一人旅を続ける</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">今まで見たことない世界へ</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">いても立っても居られないくらいの</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">鳴り止まぬ鼓動それを武器にしよう</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">そして踊り明かすダンス</span><span class="s8">floor  </span></p>
-<p class="p9"><span class="s1">一夜限りのパーティーがはじまる</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">持ち物は特にはないけど</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">僕はなんだか自信がないんだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">そんな時は声を小さくして誰にも</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">聞かれないようにごまかしちゃおう</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">ずっと憧れてた未来を</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">どうこう言っても意味はないよ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">ベッドで泣きたくなる前に</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">ちょっとだけ歩いてみようかな</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">昨日とは違う毎日が</span><span class="s8">  </span></p>
-<p class="p10"><span class="s9">始まった</span><span class="s1">Happy Life </span><span class="s9">みたいだ</span><span class="s1">  </span></p>
-<p class="p9"><span class="s1">それでまだ足りないみたいだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">感情は最新式なんだ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">また誰かがこっちをみている</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">君が僕のことを見ている</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">僕は一人旅を続ける</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">今まで見たことない世界へ</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>2. Packed My Bags</b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T, Kubota<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Kubota, Rikuto Nagira</span></p>
-<p class="p10"><span class="s1">Here we go  </span></p>
-<p class="p10"><span class="s1">Hear me on the microphone  </span></p>
-<p class="p10"><span class="s1">Peering from your mobile phone  </span></p>
-<p class="p10"><span class="s1">Speaking in a monotone  </span></p>
-<p class="p10"><span class="s1">Showin' up like it's my own show, ain't no silicone probed, this my heart and soul  </span></p>
-<p class="p10"><span class="s1">Always staying' in control  </span></p>
-<p class="p10"><span class="s1">Took it slow, Never had a lot to show  </span></p>
-<p class="p10"><span class="s1">Poking around like Whack‑a‑mole  </span></p>
-<p class="p10"><span class="s1">Boasted only when I flowed  </span></p>
-<p class="p10"><span class="s1">Waiting for the cash to show  </span></p>
-<p class="p10"><span class="s1">Bring the cheddar, Provolone might be better  </span></p>
-<p class="p10"><span class="s1">Never know  </span></p>
-<p class="p10"><span class="s1">Haven't got there yet but yo I got that flow‑state of mind  </span></p>
-<p class="p10"><span class="s1">Mind state over matter  </span></p>
-<p class="p10"><span class="s1">Packed my bags, hit up Tokyo, Got the city to chatter  </span></p>
-<p class="p9"><span class="s1">この日系人はただの</span><span class="s8">rapper </span><span class="s1">じゃないから聞いてくれ俺の</span><span class="s8"> chapter  </span></p>
-<p class="p9"><span class="s1">駅から次の駅まで</span><span class="s8"> </span><span class="s1">毎日この街を通って</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">この目が年を重ねるごと</span><span class="s8"> </span><span class="s1">景色は心と変わっていく</span><span class="s8">  </span></p>
-<p class="p10"><span class="s1">Felt the blues Back then Covered with booze and blends  </span></p>
-<p class="p10"><span class="s1">Bruised up skin will recover But the scars remain  </span></p>
-<p class="p10"><span class="s1">Won't rescind my progression From the pain I've been in  </span></p>
-<p class="p10"><span class="s1">Every scar stays because It's where the story begins  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">この声もいつか枯れてしまうから</span><span class="s8"> </span><span class="s1">自分のこともっと大事にしなきゃな</span><span class="s8">  </span></p>
-<p class="p10"><span class="s9">周りと比べて羨ましく思うけれど</span><span class="s1"> </span><span class="s9">気にしないで</span><span class="s1"> Belive in yourself  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">思い出す、</span><span class="s8"> </span><span class="s1">いつものよう遊んでた場所とか</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">あの頃口ずさんでた歌とか</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">右も左もわからずに</span><span class="s8"> </span><span class="s1">迷い込んだこの</span><span class="s8">Garden  </span></p>
-<p class="p9"><span class="s1">ぐるぐると彷徨う</span><span class="s8"> good</span><span class="s1">な</span><span class="s8">smell</span><span class="s1">にふと誘われて</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">優雅な空にちょっと黄昏て</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">咲いた、枯れた、</span><span class="s8"> </span><span class="s1">見つけた、無くした、</span><span class="s8"> </span><span class="s1">泣いた、笑ったを</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">繰り返してた</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">急な雨に打たれて心が濡れて、</span><span class="s8"> </span><span class="s1">歩くことすらできない日もあるけど</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">いつかは笑い合える</span><span class="s8"> </span><span class="s1">そんな日がやってくるはずさ</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">昔のことも未来のことも</span><span class="s8"> </span><span class="s1">愛せれば良いね</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">この声もいつか枯れてしまうから</span><span class="s8"> </span><span class="s1">自分のこともっと大事にしなきゃな</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">周りと比べて羨ましく思うけれど</span><span class="s8"> </span><span class="s1">気にしないで</span><span class="s8"> Belive in yourself</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>3. </b></span><span class="s10"><b>融解</b><b></b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Shun Maruno</span></p>
-<p class="p9"><span class="s1">おやすみって声で</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">気まぐれ魔法が</span><span class="s8"> </span><span class="s1">私の心を包む</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">目を逸らすたびに</span><span class="s8"> </span><span class="s1">ただ悲しそうに</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">過ちを繰り返す</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">素っ気なく閉じる</span><span class="s8"> </span><span class="s1">その気にさせるのが</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">相変わらず、本当上手いわね</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s1">Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  </span></p>
-<p class="p9"><span class="s1">また、私が沈んでいく</span><span class="s8">  </span></p>
-<p class="p10"><span class="s1">Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  </span></p>
-<p class="p9"><span class="s1">こんなはずじゃなかったね</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">魔法が溶ける朝</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">汚れた腕の中</span><span class="s8"> </span><span class="s1">憂鬱をただ彷徨う</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">孤独に溺れたままなのは本音を胸に閉じ込めて</span></p>
-<p class="p9"><span class="s1">塗り潰そうとしちゃうから</span></p>
-<p class="p9"><span class="s1">余計なことばかり口にするのね私が私じゃなくなるの</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s1">Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  </span></p>
-<p class="p9"><span class="s1">また、私が沈んでいく</span><span class="s8">  </span></p>
-<p class="p10"><span class="s1">Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  </span></p>
-<p class="p9"><span class="s1">こんなはずじゃなかったね</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>4. Good Garden</b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Nerubeats</span></p>
-<p class="p9"><span class="s1">誰かに何かを言われて諦めた夢を</span></p>
-<p class="p9"><span class="s1">今は忘れたよ</span></p>
-<p class="p9"><span class="s1">誰かと比べて報われない自分自身が</span></p>
-<p class="p9"><span class="s1">情けなくなった</span></p>
-<p class="p9"><span class="s1">きらきら揺れていた瞳に映る世界は</span></p>
-<p class="p9"><span class="s1">届かない場所だと気づいた</span></p>
-<p class="p9"><span class="s1">叶わない願いは捨ててきたはずだった</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">サビ</span></p>
-<p class="p9"><span class="s1">探しているガーデン</span></p>
-<p class="p9"><span class="s1">探してみるガーデン</span></p>
-<p class="p9"><span class="s1">うまく生きては来たけど</span></p>
-<p class="p9"><span class="s1">何かまだ満ち足りない</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">探しているガーデン</span></p>
-<p class="p9"><span class="s1">また探してるガーデン</span></p>
-<p class="p9"><span class="s1">不安も大事に育てて</span></p>
-<p class="p9"><span class="s1">いつか花を咲かすガーデン　</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">イヤホン外して　外の音を聞いて</span></p>
-<p class="p9"><span class="s1">部屋を抜け出して　深く息を吸って</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">思ってはいるけど正直に人に話せないことがたくさん</span></p>
-<p class="p9"><span class="s1">ほら気づけば相手の求欲しい返答ばかり選んで自分のことをまた見失ってる</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">誰かに何かを聞かれて　口にした言葉が</span></p>
-<p class="p9"><span class="s1">実は自分の　人生の中で大きな意味を持つなんて未だ信じられなの</span></p>
-<p class="p9"><span class="s8">※</span><span class="s1">サビ</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>5. </b></span><span class="s10"><b>全ての悩める人たちへ（</b></span><span class="s1"><b>Hizuo Remix</b></span><span class="s10"><b>）</b><b></b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Nerubeats, Hizuo</span></p>
-<p class="p9"><span class="s1">全ての悩める人たちは誰より強くなれる方法を知れるはず</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">何度もがいても、前に進めないこともあるでしょう？</span></p>
-<p class="p9"><span class="s1">だって今は想定外の展開、固定概念なんて無いねこの世界で</span></p>
-<p class="p9"><span class="s1">彷徨ってしまった、周り見渡しゃ全員頭抱えてる</span></p>
-<p class="p9"><span class="s1">太陽が雲で見えなくなり、時間がたてばネガティブの雨に</span></p>
-<p class="p9"><span class="s1">誰だってあるんでしょ、わざわざ言わないけど</span></p>
-<p class="p9"><span class="s1">深く落ち込んだり、誰かのせいにしてたかったり</span></p>
-<p class="p9"><span class="s1">あんまり言わないでよ全部自分の事なんだし、難しいことばかり考えてるのももう終わり</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">全ての悩める人たちへまだ途中なのなかなか上手くいかないけど</span></p>
-<p class="p9"><span class="s1">全ての悩める人たちは誰より強くなれる方法を知れるはず</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">何か始めたいのに、</span><span class="s8"> </span><span class="s1">誰かにからかわれすぐに、</span><span class="s8"> </span><span class="s1">やっと出せた一歩さえも引いてしまいたくな</span></p>
-<p class="p9"><span class="s1">るようなそんな日々に</span></p>
-<p class="p9"><span class="s1">急に嵐に襲われたみたいだ、だったらこれからの事なんて一つも決めずに</span></p>
-<p class="p9"><span class="s1">誰かに迎えに来てほしくもなるよ、いつだって出来ない事ばかりに</span></p>
-<p class="p9"><span class="s1">目を向けがちで日々戦ってる人生</span></p>
-<p class="p9"><span class="s1">暗いこの闇もあと少しで終わりでしょ、君が探してた答えならもうすぐ見つかるから顔上</span></p>
-<p class="p9"><span class="s1">げてほら</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">全ての悩める人たちへまだ途中なのなかなか上手くいかないけど</span></p>
-<p class="p9"><span class="s1">全ての悩める人たちは誰より強くなれる方法を知れるはず</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>6. ODORIBA</b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, SKYTOPIA</span></p>
-<p class="p10"><span class="s1">ODORIBA</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">朝礼</span><span class="s8">5</span><span class="s1">分前余裕で登校中、時間も気にしちゃいない</span></p>
-<p class="p9"><span class="s1">着席</span><span class="s8">1</span><span class="s1">分前急に焦り出す、まだ気配していないチャイム</span></p>
-<p class="p9"><span class="s1">校舎捉えて廊下を走り教科書を出し猛加速する</span></p>
-<p class="p9"><span class="s1">登り切った階段ギリ間に合うかと思ってたら</span><span class="s8">ODORIBA</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">方向を変える君</span></p>
-<p class="p9"><span class="s1">華麗なターンを決めて</span></p>
-<p class="p9"><span class="s1">踊ってるみたい</span></p>
-<p class="p9"><span class="s1">踊ってるみたい</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">もし転んだとしても</span></p>
-<p class="p9"><span class="s1">落ち続けないように</span></p>
-<p class="p9"><span class="s1">誰かが君の悲しみに気づけるように</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s1">ODORIBA</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">階段掃除なんか楽しい</span></p>
-<p class="p9"><span class="s1">先生いてないしたまにサボり</span></p>
-<p class="p9"><span class="s1">とかこの前までや　ってたのに</span></p>
-<p class="p9"><span class="s1">気づけば違う場所で踊り　</span></p>
-<p class="p10"><span class="s1">Dancing on the stairs</span></p>
-<p class="p9"><span class="s1">これ以上は逃げられない</span></p>
-<p class="p9"><span class="s1">楽して</span><span class="s8">make</span><span class="s1">したい</span><span class="s8">money </span><span class="s1">わからない</span></p>
-<p class="p9"><span class="s1">どうすれば良い</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s8">20</span><span class="s1">代こえて気づけば潜れるようになってた踊り場</span></p>
-<p class="p9"><span class="s1">社会人になるけど成りたくないから隠れていた踊り場</span></p>
-<p class="p9"><span class="s1">誰かの人生方向転換させてくれるかもしれない踊り場で　</span></p>
-<p class="p9"><span class="s1">難しいこと気にせずに音に乗りゃ良い、　そう思います</span></p>
-<p class="p9"><span class="s1">　</span></p>
-<p class="p10"><span class="s1">ODORIBA</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Hiragino Sans'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s11"><b>7. </b></span><span class="s10"><b>モノタリナイ</b><b></b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Nanae, Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Nanae</span></p>
-<p class="p9"><span class="s1">そう、とうとうやってきたの</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">それはもうすぐそこまで</span><span class="s8"> </span><span class="s1">込み上がってくる感覚</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">今すぐ飛び出して</span><span class="s8"> </span><span class="s1">午前</span><span class="s8">0</span><span class="s1">時に叫んでも収まりはしない</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">世界は曖昧な言葉だけで</span><span class="s8"> </span><span class="s1">片付けようとしているから</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">今手に持つこの感性だけで</span><span class="s8"> </span><span class="s1">どうやって伝えようか</span><span class="s8">  </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">ものたりない説明の中で</span><span class="s8"> </span><span class="s1">ずっとずっと君のこと</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">つまらない映画の中で</span><span class="s8"> </span><span class="s1">ずっとずっと君のこと</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">ご機嫌な脳内が巡る</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">その口癖煙たいわ</span></p>
-<p class="p9"><span class="s1">溶けたバター</span></p>
-<p class="p9"><span class="s1">昨日の返事も返さなきゃ</span></p>
-<p class="p9"><span class="s1">苦痛になるの</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">切り出せないいつものこと</span></p>
-<p class="p9"><span class="s1">本音を隠してどうしたいの？冷え切った私の心に鈍いあなたはまだ気づけないの？</span></p>
-<p class="p9"><span class="s1">これだけ濁したって、どこまでも平行線なら</span></p>
-<p class="p9"><span class="s1">どうやって伝えようか</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">ものたりない説明の中で</span><span class="s8"> </span><span class="s1">ずっとずっと君のこと</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">つまらない映画の中で</span><span class="s8"> </span><span class="s1">ずっとずっと君のこと</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">ご機嫌な脳内が巡る</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">ふざけた心またうんざり、君の声聞こえたからガッカリだ</span></p>
-<p class="p9"><span class="s1">あぁさっさと答え合わせして、</span><span class="s8">2</span><span class="s1">人の足りない物語も終わりに</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">ふざけたセリフで脳内の機嫌を伺い</span></p>
-<p class="p9"><span class="s1">使い物にならない僕の無口な五感で</span></p>
-<p class="p9"><span class="s1">どうやって伝えようか？</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">ものたりない、そう感じるほどに君が好きさ</span></p>
-<p class="p9"><span class="s1">つまらない映画を見る横に君はいない</span><span class="s8">  </span></p>
-<p class="p9"><span class="s1">窮屈な脳内が騒ぐ</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>8. LOADING</b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Nerubeats</span></p>
-<p class="p10"><span class="s9">昔々のこれは</span><span class="s1"> Story</span></p>
-<p class="p9"><span class="s8">1 </span><span class="s1">人の少年の冒険の話で</span></p>
-<p class="p9"><span class="s1">地図の見方さえわからないけど</span></p>
-<p class="p9"><span class="s1">ゲームみたいにクリアできそう</span><span class="s8">...</span></p>
-<p class="p9"><span class="s1">いつも「考えたってしょうがないでしょ？」って口癖だけが取り柄で</span></p>
-<p class="p9"><span class="s1">進んだはいいけど道が分からない</span></p>
-<p class="p9"><span class="s1">「あれ、これってもしかして、迷子ってやつなのかも！？」</span></p>
-<p class="p9"><span class="s1">ハートもゼロ</span><span class="s8"> </span><span class="s1">計画性もゼロ</span></p>
-<p class="p9"><span class="s1">でも進路方向はかえずに</span></p>
-<p class="p9"><span class="s1">ポケットに残ったクッキーの一欠片だけを頼りにして</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">右も左もまだ分かってないけど、でも何か始まりそうな気がしてる</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s1">(</span><span class="s9">サビ</span><span class="s1">)</span></p>
-<p class="p9"><span class="s1">誰もみたことがない場所へ向かってるから今楽しいんだ</span></p>
-<p class="p9"><span class="s1">それを見つけてしまったらこの旅は終わっちゃうんでしょ？</span></p>
-<p class="p9"><span class="s1">誰もみたことがない場所はいつか見えなくなってしまうんだ</span></p>
-<p class="p9"><span class="s1">まるで蜃気楼</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">一歩進んで二歩下がるみたいに</span></p>
-<p class="p9"><span class="s1">人生は前には進まないらしい</span></p>
-<p class="p9"><span class="s1">からネガティブなダンスを一晩中楽しんでる最中もうすぐ回復のアイテムも手に入ると思ってたけど出てこないな</span></p>
-<p class="p9"><span class="s1">もしかしてこの世界は全てバーチャルで本当はゴールすらもないんじゃないのかな？</span></p>
-<p class="p9"><span class="s1">「なにいってるの？」</span></p>
-<p class="p9"><span class="s1">あれなんか今聞こえた気がしたけれど多分気のせい</span></p>
-<p class="p9"><span class="s1">この世界じゃみんなが主人公</span></p>
-<p class="p9"><span class="s1">セーブしてゲーム消して電気消して明日へ</span></p>
-<p class="p9"><span class="s8">※</span><span class="s1">サビ</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">最近覚えた秘密のコマンド</span></p>
-<p class="p9"><span class="s1">使えばすぐに見つかるんだけど</span></p>
-<p class="p9"><span class="s1">でもまだ終わらせたくないから</span></p>
-<p class="p9"><span class="s8">※</span><span class="s1">サビ</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>9. Secret Princess</b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T,Akusa<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Akusa, Nerubeats</span></p>
-<p class="p9"><span class="s1">迎えに行くから待っててね</span></p>
-<p class="p9"><span class="s8"> </span><span class="s1">体冷やさないように待っててね</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">ほらこの声も届けられない</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">心の殻に閉じこもってる</span><span class="s8"> </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s1">Secret Princess </span><span class="s9">君は美しいね</span><span class="s1"> Secret Princess </span><span class="s9">君は何者なの</span><span class="s1"> </span></p>
-<p class="p9"><span class="s8">Secret Princess </span><span class="s1">会えなくなる前に</span><span class="s8">1</span><span class="s1">つだけ秘密を聞かせてよ</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s9">《</span><span class="s1">Verse 1</span><span class="s9">》</span><span class="s1"> </span></p>
-<p class="p9"><span class="s1">また捕まったなこの感情</span><span class="s8"> </span><span class="s1">一度入ったら抜け出すこと難しそう</span></p>
-<p class="p9"><span class="s1">だけどそんな程度、問題無いよ</span><span class="s8"> </span><span class="s1">君のためのオーダーメイド</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">ふと口出す欲しそうなモノ</span><span class="s8"> </span><span class="s1">全て揃え君の元へ</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">またいつもの</span><span class="s8">sofa</span><span class="s1">に座り</span><span class="s8"> </span><span class="s1">君の横顔を眺めたり</span><span class="s8"> </span><span class="s1">多少のアルコールを体に溶かし</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">寝たふりで笑う今だけは夢じゃ無い</span><span class="s8"> </span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">だけど君はいつも</span><span class="s8">1</span><span class="s1">人で</span><span class="s8"> </span><span class="s1">誰にも見せれない何かを</span></p>
-<p class="p9"><span class="s1">隠したまま</span><span class="s8"> </span><span class="s1">君はいまだ掴めそうで掴めないや</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s9">《</span><span class="s1">hook</span><span class="s9">》</span></p>
-<p class="p10"><span class="s1"> Secret Princess </span><span class="s9">君は美しいね</span><span class="s1"> Secret Princess </span><span class="s9">君は何者なの</span><span class="s1"> </span></p>
-<p class="p9"><span class="s8">Secret Princess </span><span class="s1">会えなくなる前に</span><span class="s8">1</span><span class="s1">つだけ秘密を聞かせてよ</span><span class="s8"> </span></p>
-<p class="p10"><span class="s1">Secret Princess </span><span class="s9">君はどこにいるの</span><span class="s1"> Secret Princess </span></p>
-<p class="p9"><span class="s1">君はわからないよ</span><span class="s8"> Secret Princess 1</span><span class="s1">人で泣かないで</span><span class="s8"> </span><span class="s1">でもいつか消えてしまうんだね</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s9">《</span><span class="s1">Verse 2</span><span class="s9">》</span><span class="s1"> </span></p>
-<p class="p9"><span class="s8">1</span><span class="s1">日二箱吸うハイメン</span><span class="s8"> </span><span class="s1">強気なアイメイクの反面</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">時々出る弱音が本音</span><span class="s8"> 9%</span><span class="s1">のハイボールを飲んで</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">カラオケでマイクに当てる下唇</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">大丈夫じゃないのに大丈夫って言うのが君の常套句</span></p>
-<p class="p9"><span class="s8"> </span><span class="s1">独特の会話の間とか</span><span class="s8"> </span><span class="s1">笑った時に見える歯とか</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">なんとなくラフに惚れたんだよ</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">でもまだ知らないこと山ほどある</span><span class="s8"> </span><span class="s1">大事なとこで躱す</span><span class="s8"> </span></p>
-<p class="p9"><span class="s1">ほらまたそう濁す君は天邪鬼</span><span class="s8"> </span><span class="s1">お願いだよエクステは外さないで</span></p>
-<p class="p9"><span class="s8"> </span><span class="s1">君の髪乾かす時間減るのが嫌です</span><span class="s8"> </span><span class="s1">この靴サイズ合うのは</span><span class="s8">1</span><span class="s1">人しかいないぜ</span></p>
-<p class="p9"><span class="s8"> </span><span class="s1">君を好きになったのは俺の</span><span class="s8">mistake? </span><span class="s1">海に行こう今週末</span><span class="s8">2</span><span class="s1">人でさ</span><span class="s8"> </span><span class="s1">水平線みりゃちっぽけに感じるだろう</span></p>
-<p class="p9"><span class="s8"> </span><span class="s1">誰もいないところでキスをして</span><span class="s8"> secret princess 12</span><span class="s1">時に帰ろうね（ムリ）</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p10"><span class="s9">《</span><span class="s1">hook</span><span class="s9">》</span></p>
-<p class="p10"><span class="s1"> Secret Princess </span><span class="s9">君は美しいね</span><span class="s1"> Secret Princess </span><span class="s9">君は何者なの</span><span class="s1"> </span></p>
-<p class="p9"><span class="s8">Secret Princess </span><span class="s1">会えなくなる前に</span><span class="s8">1</span><span class="s1">つだけ秘密を聞かせてよ</span><span class="s8"> </span></p>
-<p class="p10"><span class="s1">Secret Princess </span><span class="s9">君はどこにいるの</span><span class="s1"> Secret Princess </span></p>
-<p class="p9"><span class="s1">君はわからないよ</span><span class="s8"> Secret Princess 1</span><span class="s1">人で泣かないで</span><span class="s8"> </span><span class="s1">でもいつか消えてしまうんだね</span></p>
-<h3 style="margin: 0.0px 0.0px 22.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #eaeaea; -webkit-text-stroke: #eaeaea"><span class="s1"><b>10. </b></span><span class="s10"><b>晩餐会</b><b></b></span></h3>
-<p class="p8"><span class="s7">作詞：</span><span class="s1">Sigma-T<br>
-</span><span class="s7">作曲：</span><span class="s1">Sigma-T, Nerubeats</span></p>
-<p class="p9"><span class="s1">誘ってみた日　照れを隠しながら歩く少しの道のり</span></p>
-<p class="p9"><span class="s1">椅子に座り　メニュー開きいつもと違う夜の始まり</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">さてどんな話をしようとか迷いながら頼む最初のオーダー多分</span></p>
-<p class="p9"><span class="s1">君が食べたいのは定番で流行りのあれだろうな</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">タキシードなんて着ていないけど</span></p>
-<p class="p9"><span class="s1">これ俺なりドレスコード</span></p>
-<p class="p9"><span class="s1">平気な顔ぶってることとか</span></p>
-<p class="p9"><span class="s1">もしかしたら見破られてるかもね</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">揺れ動く感情の中で　君と</span><span class="s8">2</span><span class="s1">人向かい合ってできる限りの振る舞いで</span></p>
-<p class="p9"><span class="s1">君を迎えよう　普段は飲めないアルコールに不安と期待を添えてグラスを合わせよう</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">最初の料理が来るまでの時間の使い方が腕の見せどころ</span></p>
-<p class="p9"><span class="s1">メインディッシュは後に置いておいて</span></p>
-<p class="p9"><span class="s1">君との会話花咲かせたいね　普段の好きなこと僕の知らない君のこと</span></p>
-<p class="p9"><span class="s1">だけど運ばれてくるご馳走にこの話も埋もれていく</span></p>
-<p class="p9"><span class="s1">酔いが回り始めるこの時間　少しだけ勇気を出そう</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">揺れ動く感情の中で　君と</span><span class="s8">2</span><span class="s1">人向かい合ってできる限りの振る舞いで</span></p>
-<p class="p9"><span class="s1">君を迎えよう　普段は飲めないアルコールに不安と期待を添えてグラスを合わせよう</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">後ちょっとで終わるこの時間も最後は君へのサプライズで盛大に盛り上げよう</span></p>
-<p class="p11"><span class="s1"></span><br></p>
-<p class="p9"><span class="s1">揺れ動く感情の中で　君と</span><span class="s8">2</span><span class="s1">人向かい合ってできる限りの振る舞いで</span></p>
-<p class="p9"><span class="s1">君を迎えよう　普段は飲めないアルコールに不安と期待を添えてグラスを合わせよう</span></p>
-</body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>Sigma-T</h1>
+            <p>2025.08.10 NIGHT THEATER at恵比寿BATICA</p>
+        </header>
+
+        <nav class="setlist">
+            <h2>SET LIST</h2>
+            <ol>
+                <li><a href="#song1">Stimulation</a></li>
+                <li><a href="#song2">Packed My Bags</a></li>
+                <li><a href="#song3">融解</a></li>
+                <li><a href="#song4">Good Garden</a></li>
+                <li><a href="#song5">全ての悩める人たちへ（Hizuo Remix）</a></li>
+                <li><a href="#song6">ODORIBA</a></li>
+                <li><a href="#song7">モノタリナイ</a></li>
+                <li><a href="#song8">LOADING</a></li>
+                <li><a href="#song9">Secret Princess</a></li>
+                <li><a href="#song10">晩餐会</a></li>
+            </ol>
+        </nav>
+        <section id="song1" class="song-block">
+            <h3 class="song-title">1. Stimulation</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, Nerubeats</p>
+            <div class="lyrics">昨日とは違う毎日が  
+始まったHappy Life みたいだ  
+それでまだ足りないみたいだ  
+感情は最新式なんだ  
+また誰かがこっちをみている  
+君が僕のことを見ている  
+僕は一人旅を続ける  
+今まで見たことない世界へ  
+
+Wake up 昼の12:00を過ぎてる  
+いつもと同じとりあえずシャワーに  
+新しいことなんて何もない  
+つまらないmy life あぁまた始まる  
+そりゃそうでしょう？  
+
+昨日も今日も変わらない  
+冒険の書開いてみようか  
+やっと立てたはずのスタートライン  
+も今じゃ悪天候  
+言い訳ばっか続けても  
+結局何も変わらないでしょう？  
+
+じゃあ今から声合わせて  
+1234でstep up  
+
+昨日とは違う毎日が  
+始まったHappy Life みたいだ  
+それでまだ足りないみたいだ  
+感情は最新式なんだ  
+また誰かがこっちをみている  
+君が僕のことを見ている  
+僕は一人旅を続ける  
+今まで見たことない世界へ  
+
+いても立っても居られないくらいの  
+鳴り止まぬ鼓動それを武器にしよう  
+そして踊り明かすダンスfloor  
+一夜限りのパーティーがはじまる  
+持ち物は特にはないけど  
+僕はなんだか自信がないんだ  
+そんな時は声を小さくして誰にも  
+聞かれないようにごまかしちゃおう  
+
+ずっと憧れてた未来を  
+どうこう言っても意味はないよ  
+ベッドで泣きたくなる前に  
+ちょっとだけ歩いてみようかな  
+
+昨日とは違う毎日が  
+始まったHappy Life みたいだ  
+それでまだ足りないみたいだ  
+感情は最新式なんだ  
+また誰かがこっちをみている  
+君が僕のことを見ている  
+僕は一人旅を続ける  
+今まで見たことない世界へ</div>
+        </section>
+
+        <section id="song2" class="song-block">
+            <h3 class="song-title">2. Packed My Bags</h3>
+            <p class="credits">作詞：Sigma-T, Kubota<br>作曲：Sigma-T, Kubota, Rikuto Nagira</p>
+            <div class="lyrics">Here we go  
+Hear me on the microphone  
+Peering from your mobile phone  
+Speaking in a monotone  
+Showin' up like it's my own show, ain't no silicone probed, this my heart and soul  
+Always staying' in control  
+Took it slow, Never had a lot to show  
+Poking around like Whack‑a‑mole  
+Boasted only when I flowed  
+Waiting for the cash to show  
+Bring the cheddar, Provolone might be better  
+Never know  
+Haven't got there yet but yo I got that flow‑state of mind  
+Mind state over matter  
+Packed my bags, hit up Tokyo, Got the city to chatter  
+この日系人はただのrapper じゃないから聞いてくれ俺の chapter  
+駅から次の駅まで 毎日この街を通って  
+この目が年を重ねるごと 景色は心と変わっていく  
+Felt the blues Back then Covered with booze and blends  
+Bruised up skin will recover But the scars remain  
+Won't rescind my progression From the pain I've been in  
+Every scar stays because It's where the story begins  
+
+この声もいつか枯れてしまうから 自分のこともっと大事にしなきゃな  
+周りと比べて羨ましく思うけれど 気にしないで Belive in yourself  
+
+思い出す、 いつものよう遊んでた場所とか  
+あの頃口ずさんでた歌とか  
+右も左もわからずに 迷い込んだこのGarden  
+ぐるぐると彷徨う goodなsmellにふと誘われて  
+優雅な空にちょっと黄昏て  
+咲いた、枯れた、 見つけた、無くした、 泣いた、笑ったを  
+繰り返してた  
+急な雨に打たれて心が濡れて、 歩くことすらできない日もあるけど  
+いつかは笑い合える そんな日がやってくるはずさ  
+昔のことも未来のことも 愛せれば良いね  
+
+この声もいつか枯れてしまうから 自分のこともっと大事にしなきゃな  
+周りと比べて羨ましく思うけれど 気にしないで Belive in yourself</div>
+        </section>
+
+        <section id="song3" class="song-block">
+            <h3 class="song-title">3. 融解</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, Shun Maruno</p>
+            <div class="lyrics">おやすみって声で  
+気まぐれ魔法が 私の心を包む  
+目を逸らすたびに ただ悲しそうに  
+過ちを繰り返す  
+素っ気なく閉じる その気にさせるのが  
+相変わらず、本当上手いわね  
+
+Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  
+また、私が沈んでいく  
+Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  
+こんなはずじゃなかったね  
+
+魔法が溶ける朝  
+汚れた腕の中 憂鬱をただ彷徨う  
+孤独に溺れたままなのは本音を胸に閉じ込めて
+塗り潰そうとしちゃうから
+余計なことばかり口にするのね私が私じゃなくなるの
+
+Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  
+また、私が沈んでいく  
+Fallin' down Fallin' down Fallin' down Fallin' down Fallin' down  
+こんなはずじゃなかったね</div>
+        </section>
+
+        <section id="song4" class="song-block">
+            <h3 class="song-title">4. Good Garden</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, Nerubeats</p>
+            <div class="lyrics">誰かに何かを言われて諦めた夢を
+今は忘れたよ
+誰かと比べて報われない自分自身が
+情けなくなった
+きらきら揺れていた瞳に映る世界は
+届かない場所だと気づいた
+叶わない願いは捨ててきたはずだった
+
+サビ
+探しているガーデン
+探してみるガーデン
+うまく生きては来たけど
+何かまだ満ち足りない
+
+探しているガーデン
+また探してるガーデン
+不安も大事に育てて
+いつか花を咲かすガーデン　
+
+
+イヤホン外して　外の音を聞いて
+部屋を抜け出して　深く息を吸って
+
+思ってはいるけど正直に人に話せないことがたくさん
+ほら気づけば相手の求欲しい返答ばかり選んで自分のことをまた見失ってる
+
+誰かに何かを聞かれて　口にした言葉が
+実は自分の　人生の中で大きな意味を持つなんて未だ信じられなの
+※サビ</div>
+        </section>
+
+        <section id="song5" class="song-block">
+            <h3 class="song-title">5. 全ての悩める人たちへ（Hizuo Remix）</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, Nerubeats, Hizuo</p>
+            <div class="lyrics">全ての悩める人たちは誰より強くなれる方法を知れるはず
+
+何度もがいても、前に進めないこともあるでしょう？
+だって今は想定外の展開、固定概念なんて無いねこの世界で
+彷徨ってしまった、周り見渡しゃ全員頭抱えてる
+太陽が雲で見えなくなり、時間がたてばネガティブの雨に
+誰だってあるんでしょ、わざわざ言わないけど
+深く落ち込んだり、誰かのせいにしてたかったり
+あんまり言わないでよ全部自分の事なんだし、難しいことばかり考えてるのももう終わり
+
+全ての悩める人たちへまだ途中なのなかなか上手くいかないけど
+全ての悩める人たちは誰より強くなれる方法を知れるはず
+
+何か始めたいのに、 誰かにからかわれすぐに、 やっと出せた一歩さえも引いてしまいたくな
+るようなそんな日々に
+急に嵐に襲われたみたいだ、だったらこれからの事なんて一つも決めずに
+誰かに迎えに来てほしくもなるよ、いつだって出来ない事ばかりに
+目を向けがちで日々戦ってる人生
+暗いこの闇もあと少しで終わりでしょ、君が探してた答えならもうすぐ見つかるから顔上
+げてほら
+
+全ての悩める人たちへまだ途中なのなかなか上手くいかないけど
+全ての悩める人たちは誰より強くなれる方法を知れるはず</div>
+        </section>
+
+        <section id="song6" class="song-block">
+            <h3 class="song-title">6. ODORIBA</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, SKYTOPIA</p>
+            <div class="lyrics">ODORIBA
+
+朝礼5分前余裕で登校中、時間も気にしちゃいない
+着席1分前急に焦り出す、まだ気配していないチャイム
+校舎捉えて廊下を走り教科書を出し猛加速する
+登り切った階段ギリ間に合うかと思ってたらODORIBA
+
+方向を変える君
+華麗なターンを決めて
+踊ってるみたい
+踊ってるみたい
+
+もし転んだとしても
+落ち続けないように
+誰かが君の悲しみに気づけるように
+
+ODORIBA
+
+階段掃除なんか楽しい
+先生いてないしたまにサボり
+とかこの前までや　ってたのに
+気づけば違う場所で踊り　
+Dancing on the stairs
+これ以上は逃げられない
+楽してmakeしたいmoney わからない
+どうすれば良い
+
+20代こえて気づけば潜れるようになってた踊り場
+社会人になるけど成りたくないから隠れていた踊り場
+誰かの人生方向転換させてくれるかもしれない踊り場で　
+難しいこと気にせずに音に乗りゃ良い、　そう思います
+　
+ODORIBA</div>
+        </section>
+
+        <section id="song7" class="song-block">
+            <h3 class="song-title">7. モノタリナイ</h3>
+            <p class="credits">作詞：Nanae, Sigma-T<br>作曲：Nanae</p>
+            <div class="lyrics">そう、とうとうやってきたの  
+それはもうすぐそこまで 込み上がってくる感覚  
+
+今すぐ飛び出して 午前0時に叫んでも収まりはしない  
+世界は曖昧な言葉だけで 片付けようとしているから  
+今手に持つこの感性だけで どうやって伝えようか  
+
+ものたりない説明の中で ずっとずっと君のこと  
+つまらない映画の中で ずっとずっと君のこと  
+ご機嫌な脳内が巡る
+
+その口癖煙たいわ
+溶けたバター
+昨日の返事も返さなきゃ
+苦痛になるの
+
+切り出せないいつものこと
+本音を隠してどうしたいの？冷え切った私の心に鈍いあなたはまだ気づけないの？
+これだけ濁したって、どこまでも平行線なら
+どうやって伝えようか
+
+ものたりない説明の中で ずっとずっと君のこと  
+つまらない映画の中で ずっとずっと君のこと  
+ご機嫌な脳内が巡る
+
+ふざけた心またうんざり、君の声聞こえたからガッカリだ
+あぁさっさと答え合わせして、2人の足りない物語も終わりに
+
+ふざけたセリフで脳内の機嫌を伺い
+使い物にならない僕の無口な五感で
+どうやって伝えようか？
+
+ものたりない、そう感じるほどに君が好きさ
+つまらない映画を見る横に君はいない  
+窮屈な脳内が騒ぐ</div>
+        </section>
+
+        <section id="song8" class="song-block">
+            <h3 class="song-title">8. LOADING</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, Nerubeats</p>
+            <div class="lyrics">昔々のこれは Story
+1 人の少年の冒険の話で
+地図の見方さえわからないけど
+ゲームみたいにクリアできそう...
+いつも「考えたってしょうがないでしょ？」って口癖だけが取り柄で
+進んだはいいけど道が分からない
+「あれ、これってもしかして、迷子ってやつなのかも！？」
+ハートもゼロ 計画性もゼロ
+でも進路方向はかえずに
+ポケットに残ったクッキーの一欠片だけを頼りにして
+
+右も左もまだ分かってないけど、でも何か始まりそうな気がしてる
+
+(サビ)
+誰もみたことがない場所へ向かってるから今楽しいんだ
+それを見つけてしまったらこの旅は終わっちゃうんでしょ？
+誰もみたことがない場所はいつか見えなくなってしまうんだ
+まるで蜃気楼
+
+
+一歩進んで二歩下がるみたいに
+人生は前には進まないらしい
+からネガティブなダンスを一晩中楽しんでる最中もうすぐ回復のアイテムも手に入ると思ってたけど出てこないな
+もしかしてこの世界は全てバーチャルで本当はゴールすらもないんじゃないのかな？
+「なにいってるの？」
+あれなんか今聞こえた気がしたけれど多分気のせい
+この世界じゃみんなが主人公
+セーブしてゲーム消して電気消して明日へ
+※サビ
+
+最近覚えた秘密のコマンド
+使えばすぐに見つかるんだけど
+でもまだ終わらせたくないから
+※サビ</div>
+        </section>
+        
+        <section id="song9" class="song-block">
+            <h3 class="song-title">9. Secret Princess</h3>
+            <p class="credits">作詞：Sigma-T,Akusa<br>作曲：Sigma-T, Akusa, Nerubeats</p>
+            <div class="lyrics">迎えに行くから待っててね
+ 体冷やさないように待っててね 
+ほらこの声も届けられない 
+心の殻に閉じこもってる 
+
+Secret Princess 君は美しいね Secret Princess 君は何者なの 
+Secret Princess 会えなくなる前に1つだけ秘密を聞かせてよ
+
+《Verse 1》 
+また捕まったなこの感情 一度入ったら抜け出すこと難しそう
+だけどそんな程度、問題無いよ 君のためのオーダーメイド 
+ふと口出す欲しそうなモノ 全て揃え君の元へ 
+またいつものsofaに座り 君の横顔を眺めたり 多少のアルコールを体に溶かし 
+寝たふりで笑う今だけは夢じゃ無い 
+
+だけど君はいつも1人で 誰にも見せれない何かを
+隠したまま 君はいまだ掴めそうで掴めないや
+
+《hook》
+ Secret Princess 君は美しいね Secret Princess 君は何者なの 
+Secret Princess 会えなくなる前に1つだけ秘密を聞かせてよ 
+Secret Princess 君はどこにいるの Secret Princess 
+君はわからないよ Secret Princess 1人で泣かないで でもいつか消えてしまうんだね
+
+《Verse 2》 
+1日二箱吸うハイメン 強気なアイメイクの反面 
+時々出る弱音が本音 9%のハイボールを飲んで 
+カラオケでマイクに当てる下唇 
+大丈夫じゃないのに大丈夫って言うのが君の常套句
+ 独特の会話の間とか 笑った時に見える歯とか 
+なんとなくラフに惚れたんだよ 
+でもまだ知らないこと山ほどある 大事なとこで躱す 
+ほらまたそう濁す君は天邪鬼 お願いだよエクステは外さないで
+ 君の髪乾かす時間減るのが嫌です この靴サイズ合うのは1人しかいないぜ
+ 君を好きになったのは俺のmistake? 海に行こう今週末2人でさ 水平線みりゃちっぽけに感じるだろう
+ 誰もいないところでキスをして secret princess 12時に帰ろうね（ムリ）
+
+《hook》
+ Secret Princess 君は美しいね Secret Princess 君は何者なの 
+Secret Princess 会えなくなる前に1つだけ秘密を聞かせてよ 
+Secret Princess 君はどこにいるの Secret Princess 
+君はわからないよ Secret Princess 1人で泣かないで でもいつか消えてしまうんだね</div>
+        </section>
+
+        <section id="song10" class="song-block">
+            <h3 class="song-title">10. 晩餐会</h3>
+            <p class="credits">作詞：Sigma-T<br>作曲：Sigma-T, Nerubeats</p>
+            <div class="lyrics">誘ってみた日　照れを隠しながら歩く少しの道のり
+椅子に座り　メニュー開きいつもと違う夜の始まり
+
+さてどんな話をしようとか迷いながら頼む最初のオーダー多分
+君が食べたいのは定番で流行りのあれだろうな
+
+タキシードなんて着ていないけど
+これ俺なりドレスコード
+平気な顔ぶってることとか
+もしかしたら見破られてるかもね
+
+揺れ動く感情の中で　君と2人向かい合ってできる限りの振る舞いで
+君を迎えよう　普段は飲めないアルコールに不安と期待を添えてグラスを合わせよう
+
+最初の料理が来るまでの時間の使い方が腕の見せどころ
+メインディッシュは後に置いておいて
+君との会話花咲かせたいね　普段の好きなこと僕の知らない君のこと
+だけど運ばれてくるご馳走にこの話も埋もれていく
+酔いが回り始めるこの時間　少しだけ勇気を出そう
+
+揺れ動く感情の中で　君と2人向かい合ってできる限りの振る舞いで
+君を迎えよう　普段は飲めないアルコールに不安と期待を添えてグラスを合わせよう
+
+後ちょっとで終わるこの時間も最後は君へのサプライズで盛大に盛り上げよう
+
+揺れ動く感情の中で　君と2人向かい合ってできる限りの振る舞いで
+君を迎えよう　普段は飲めないアルコールに不安と期待を添えてグラスを合わせよう</div>
+        </section>
+
+    </div></body>
 </html>
